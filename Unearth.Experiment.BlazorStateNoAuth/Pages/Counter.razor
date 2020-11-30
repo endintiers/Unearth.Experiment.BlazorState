@@ -1,0 +1,17 @@
+﻿@page "/counter"
+@using Unearth.Experiment.BlazorStateNoAuth.Services
+@inject ScopedState _scopedState
+
+<h1>Counter</h1>
+
+<p>Current count: @_scopedState.CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+
+    private void IncrementCount()
+    {
+        _scopedState.CurrentCount++;
+    }
+}
